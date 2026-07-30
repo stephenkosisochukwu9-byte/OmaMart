@@ -13,7 +13,7 @@ export default function ContactPage() {
         <section className="bg-gradient-to-r from-blue-700 to-blue-500 text-white py-20">
           <div className="max-w-7xl mx-auto px-6 text-center">
 
-            <h1 className="text-5xl font-extrabold text-gray-900">
+            <h1 className="text-3xl font-extrabold">
               Contact OmaMart
             </h1>
 
