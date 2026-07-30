@@ -13,7 +13,7 @@ export default function ContactPage() {
         <section className="bg-gradient-to-r from-blue-700 to-blue-500 text-white py-20">
           <div className="max-w-7xl mx-auto px-6 text-center">
 
-            <h1 className="text-5xl font-extrabold">
+            <h1 className="text-5xl font-extrabold text-gray-900">
               Contact OmaMart
             </h1>
 
@@ -36,13 +36,13 @@ export default function ContactPage() {
                 size={40}
               />
 
-              <h2 className="text-xl font-bold mt-5">
+              <h2 className="text-xl font-bold mt-5 text-gray-900">
                 Phone
               </h2>
 
               <a
                 href="tel:+2348000000000"
-                className="text-gray-600 mt-3 block hover:text-orange-500"
+                className="text-gray-900 mt-3 block hover:text-orange-500"
               >
                 +234 800 000 0000
               </a>
@@ -54,13 +54,13 @@ export default function ContactPage() {
                 size={40}
               />
 
-              <h2 className="text-xl font-bold mt-5">
+              <h2 className="text-xl font-bold mt-5 text-gray-900">
                 Email
               </h2>
 
               <a
                 href="mailto:support@omamart.com"
-                className="text-gray-600 mt-3 block hover:text-orange-500"
+                className="text-gray-900 mt-3 block hover:text-orange-500"
               >
                 support@omamart.com
               </a>
@@ -72,26 +72,26 @@ export default function ContactPage() {
                 size={40}
               />
 
-              <h2 className="text-xl font-bold mt-5">
+              <h2 className="text-xl font-bold mt-5 text-gray-900">
                 Address
               </h2>
 
-              <p className="text-gray-600 mt-3">
+              <p className="text-gray-900 mt-3">
                 Anambra, Nigeria
               </p>
             </div>
 
             <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition">
               <Clock
-                className="mx-auto text-orange-500"
+                className="mx-auto text-orange-500 "
                 size={40}
               />
 
-              <h2 className="text-xl font-bold mt-5">
+              <h2 className="text-xl font-bold mt-5 text-gray-900">
                 Business Hours
               </h2>
 
-              <p className="text-gray-600 mt-3">
+              <p className="text-gray-900 mt-3">
                 Monday - Saturday
                 <br />
                 8:00 AM - 6:00 PM
@@ -112,7 +112,7 @@ export default function ContactPage() {
               Need Assistance?
             </h2>
 
-            <p className="mt-6 text-gray-600 leading-8 text-lg">
+            <p className="mt-6 text-gray-900 leading-8 text-lg">
               Our customer support team is available during business hours to
               assist you with product enquiries, order tracking, deliveries,
               returns and every other shopping-related question.
