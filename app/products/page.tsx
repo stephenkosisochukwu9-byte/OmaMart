@@ -81,11 +81,11 @@ export default function ProductsPage() {
 
                   <div className="p-5">
 
-                    <h2 className="font-bold text-lg">
+                    <h2 className="text-gray-900 text-xl font-extrabold">
                       {product.name}
                     </h2>
 
-                    <p className="text-gray-500 mt-2">
+                    <p className="text-gray-700 mt-2 font-medium">
                       {product.category}
                     </p>
 
