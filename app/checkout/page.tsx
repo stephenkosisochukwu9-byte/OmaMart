@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import PaystackPop from "@paystack/inline-js";
 import { useCart } from "@/components/context/CartContext";
 
 export default function CheckoutPage() {
@@ -57,13 +56,14 @@ async function getUser() {
 
   const total = subtotal + deliveryFee;
 
-  function payWithPaystack() {
+  async function payWithPaystack() {
+    const { default: PaystackPop } = await import("@paystack/inline-js");
+const popup = new PaystackPop();
     if (!name || !email || !phone || !state  || !address) {
       alert("Please fill in all customer information.");
       return;
     }
 
-    const popup = new PaystackPop();
 
     popup.newTransaction({
       key: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY!,
