@@ -159,7 +159,7 @@ const { search, setSearch } = useSearch();
 
     </div>
 
-    <div className="p-5">
+    <div className="p-5 text-gray-900">
 
       <span className="text-sm font-semibold bg-orange-100 text-orange-700 px-3 py-1 rounded-full">
         {product.category}
