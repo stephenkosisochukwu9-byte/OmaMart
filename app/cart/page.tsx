@@ -30,11 +30,11 @@ export default function CartPage() {
             <ShoppingCart size={48} className="text-orange-500" />
           </div>
 
-          <h1 className="text-3xl font-bold mt-8">
+          <h1 className="text-3xl font-bold mt-8 text-gray-900">
             Your Cart is Empty
           </h1>
 
-          <p className="text-gray-600 mt-4">
+          <p className="text-gray-600 mt-4 text-gray-900">
             Looks like you haven't added any products to your cart yet.
           </p>
 
