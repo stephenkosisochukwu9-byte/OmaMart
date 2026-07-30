@@ -86,8 +86,13 @@ export default function ProductsPage() {
                     </h2>
 
                     <p className="text-gray-700 mt-2 font-medium">
-                      {product.category}
-                    </p>
+  {product.category
+    ?.split(" ")
+    .map((word: string) =>
+  word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+)
+    .join(" ")}
+</p>
 
                     <p className="text-orange-600 text-2xl font-bold mt-4">
                       ₦{Number(product.price).toLocaleString()}
