@@ -161,13 +161,18 @@ const { search, setSearch } = useSearch();
 
     <div className="p-5 text-gray-900">
 
-      <span className="text-sm font-semibold bg-orange-100 text-orange-700 px-3 py-1 rounded-full">
-        {product.category}
-      </span>
-
-      <h3 className="font-bold text-lg mt-3 h-16 overflow-hidden font-semibold text-gray-900">
-        {product.name}
-      </h3>
+     <span
+  style={{ color: "#c2410c" }}
+  className="text-sm font-semibold bg-orange-100 px-3 py-1 rounded-full"
+>
+  {product.category}
+</span>
+      <h3
+  style={{ color: "#111827" }}
+  className="font-bold text-lg mt-3 h-16 overflow-hidden"
+>
+  {product.name}
+</h3>
 
       <div className="flex items-center mt-2">
 
