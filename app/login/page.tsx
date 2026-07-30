@@ -43,7 +43,7 @@ export default function LoginPage() {
 
       <div className="bg-white w-[420px] rounded-2xl shadow-xl p-10">
 
-        <h1 className="text-3xl font-bold text-center mb-8">
+        <h1 className="text-3xl font-bold text-gray-900">
           Login
         </h1>
 
@@ -52,7 +52,7 @@ export default function LoginPage() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border rounded-xl p-4 mb-5"
+         className="font-medium text-gray-900 placeholder:text-gray-500"
         />
 
         <input
@@ -60,7 +60,7 @@ export default function LoginPage() {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full border rounded-xl p-4 mb-6"
+         className="font-medium text-gray-900 placeholder:text-gray-500"
         />
 
         <button
@@ -71,11 +71,11 @@ export default function LoginPage() {
           {loading ? "Logging in..." : "Login"}
         </button>
 
-        <p className="text-center mt-6">
+        <p className="font-medium text-gray-700">
           Don't have an account?{" "}
           <Link
             href="/signup"
-            className="text-orange-500 font-semibold"
+            className="font-bold text-orange-500"
           >
             Sign Up
           </Link>
