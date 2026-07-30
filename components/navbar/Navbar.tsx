@@ -25,6 +25,7 @@ export default function Navbar() {
 const [user, setUser] = useState<any>(null);
 const [showMenu, setShowMenu] = useState(false);
 const menuRef = useRef<HTMLDivElement>(null);
+const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 useEffect(() => {
   checkUser();
@@ -147,7 +148,10 @@ async function logout() {
             href="/cart"
             className="relative hover:text-orange-500 transition"
           >
-            <ShoppingCart size={24} />
+           <ShoppingCart
+  size={24}
+  className="text-gray-700 hover:text-orange-500"
+/>
 
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full min-w-[20px] h-5 px-1 flex items-center justify-center">
@@ -166,7 +170,10 @@ async function logout() {
   className="flex items-center gap-2 hover:text-orange-500 transition"
 >
 
-      <User size={24} />
+     <User
+  size={24}
+  className="text-gray-700 hover:text-orange-500 transition"
+/>
 
       <span className="hidden lg:block font-medium">
   {user.user_metadata?.full_name || "Account"}
@@ -181,7 +188,10 @@ async function logout() {
       className="flex items-center gap-2 hover:text-orange-500 transition"
     >
 
-      <User size={24} />
+      <User
+  size={24}
+  className="text-gray-700 hover:text-orange-500 transition"
+/>
 
       <span className="hidden lg:block">
         Account
@@ -243,13 +253,68 @@ async function logout() {
   )}
 
 </div>
-          <button className="lg:hidden">
-            <Menu size={28} />
-          </button>
-
+          <button
+  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+>
+  <Menu
+    size={24}
+    className="text-gray-700 hover:text-orange-500 transition"
+  />
+</button>
         </div>
 
       </div>
+      {mobileMenuOpen && (
+  <div className="md:hidden bg-white border-t shadow-lg">
+    <Link
+      href="/"
+      onClick={() => setMobileMenuOpen(false)}
+      className="block px-6 py-4 hover:bg-gray-100"
+    >
+      Home
+    </Link>
+
+    <Link
+      href="/products"
+      onClick={() => setMobileMenuOpen(false)}
+      className="block px-6 py-4 hover:bg-gray-100"
+    >
+      Shop
+    </Link>
+
+    <Link
+      href="/categories"
+      onClick={() => setMobileMenuOpen(false)}
+      className="block px-6 py-4 hover:bg-gray-100"
+    >
+      Categories
+    </Link>
+
+    <Link
+      href="/cart"
+      onClick={() => setMobileMenuOpen(false)}
+      className="block px-6 py-4 hover:bg-gray-100"
+    >
+      Cart
+    </Link>
+
+    <Link
+      href="/contact"
+      onClick={() => setMobileMenuOpen(false)}
+      className="block px-6 py-4 hover:bg-gray-100"
+    >
+      Contact
+    </Link>
+
+    <Link
+      href={user ? "/profile" : "/login"}
+      onClick={() => setMobileMenuOpen(false)}
+      className="block px-6 py-4 hover:bg-gray-100"
+    >
+      {user ? "My Account" : "Login"}
+    </Link>
+  </div>
+)}
     </header>
   );
 }
