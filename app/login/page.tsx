@@ -43,7 +43,7 @@ export default function LoginPage() {
 
       <div className="bg-white w-[420px] rounded-2xl shadow-xl p-10">
 
-        <h1 className="text-3xl font-bold text-gray-900">
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">
           Login
         </h1>
 
@@ -52,7 +52,7 @@ export default function LoginPage() {
   placeholder="Email"
   value={email}
   onChange={(e) => setEmail(e.target.value)}
-  className="w-full border border-gray-300 rounded-xl px-4 py-4 font-medium text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
+  className="w-full border border-gray-300 rounded-xl px-4 py-4 mb-5 font-medium text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
 />
 
        <input
@@ -60,18 +60,18 @@ export default function LoginPage() {
   placeholder="Password"
   value={password}
   onChange={(e) => setPassword(e.target.value)}
-  className="w-full border border-gray-300 rounded-xl px-4 py-4 font-medium text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
+  className="w-full border border-gray-300 rounded-xl px-4 py-4 mb-6 font-medium text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
 />
 
         <button
           onClick={login}
           disabled={loading}
-          className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl font-semibold"
+          className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl font-semibold mb-6"
         >
           {loading ? "Logging in..." : "Login"}
         </button>
 
-        <p className="font-medium text-gray-700">
+        <p className="text-center font-medium text-gray-700">
           Don't have an account?{" "}
           <Link
             href="/signup"
