@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import { isAdmin } from "@/lib/admin";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -25,15 +26,21 @@ console.log("User:", data.user);
 console.log("Session:", data.session);
 console.log("Error:", error);
 
-    setLoading(false);
+   setLoading(false);
 
-    if (error) {
-      alert(error.message);
-      return;
-    }
+if (error) {
+  alert(error.message);
+  return;
+}
 
-    router.push("/dashboard");
-    router.refresh();
+if (!isAdmin(data.user?.email)) {
+  await supabase.auth.signOut();
+  alert("Access denied. This account is not an administrator.");
+  return;
+}
+
+router.push("/dashboard");
+router.refresh();
   }
 
   return (

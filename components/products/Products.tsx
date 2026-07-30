@@ -145,17 +145,16 @@ const { search, setSearch } = useSearch();
     className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden group"
   >
 
-    <div className="relative bg-gray-100 h-56 flex items-center justify-center">
+    <div className="relative bg-gray-100 h-64 w-full overflow-hidden rounded-t-2xl">
 
-      <Image
-        src={product.image}
-        alt={product.name}
-        width={180}
-        height={180}
-        className="object-contain group-hover:scale-105 transition"
-        unoptimized
-      />
-
+   <Image
+  src={product.image}
+  alt={product.name}
+  fill
+  sizes="(max-width:768px) 100vw, 25vw"
+  className="object-cover object-center group-hover:scale-105 transition duration-300"
+  unoptimized
+/>
      
 
     </div>
@@ -166,7 +165,7 @@ const { search, setSearch } = useSearch();
         {product.category}
       </span>
 
-      <h3 className="font-bold text-lg mt-3">
+      <h3 className="font-bold text-lg mt-3 h-16 overflow-hidden">
         {product.name}
       </h3>
 

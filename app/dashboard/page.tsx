@@ -2,9 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import { requireAdmin } from "@/lib/auth";
 
 export default function Dashboard() {
+  const router = useRouter();
     const [products, setProducts] = useState<any[]>([]);
     const [orders, setOrders] = useState<any[]>([]);
     const [todayRevenue, setTodayRevenue] = useState(0);
@@ -14,8 +17,22 @@ export default function Dashboard() {
     const [recentOrders, setRecentOrders] = useState<any[]>([]);
 
 useEffect(() => {
+ async function initialize() {
+  const result = await requireAdmin();
+
+  console.log("Admin check:", result);
+
+
+if (!result.authorized) {
+  router.replace("/admin/login");
+  return;
+}
+
   getProducts();
   getOrders();
+}
+
+  initialize();
 }, []);
 
 async function getProducts() {

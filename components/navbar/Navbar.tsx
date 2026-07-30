@@ -89,25 +89,33 @@ async function logout() {
 
         {/* Navigation */}
         <nav className="hidden lg:flex items-center gap-8 font-medium text-gray-700">
-          <Link href="/" className="hover:text-orange-500 transition">
-            Home
-          </Link>
+         <Link
+  href="/"
+  className="hover:text-orange-500 transition"
+>
+  Home
+</Link>
 
-          <a href="#" className="hover:text-orange-500 transition">
-            Shop
-          </a>
+<Link
+  href="/products"
+  className="hover:text-orange-500 transition"
+>
+  Shop
+</Link>
 
-          <a href="#" className="hover:text-orange-500 transition">
-            Categories
-          </a>
+<Link
+  href="/categories"
+  className="hover:text-orange-500 transition"
+>
+  Categories
+</Link>
 
-          <a href="#" className="hover:text-orange-500 transition">
-            Deals
-          </a>
-
-          <a href="#" className="hover:text-orange-500 transition">
-            Contact
-          </a>
+<Link
+  href="/contact"
+  className="hover:text-orange-500 transition"
+>
+  Contact
+</Link>
         </nav>
 
         {/* Search Box */}
