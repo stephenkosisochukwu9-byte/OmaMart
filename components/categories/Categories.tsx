@@ -84,9 +84,14 @@ async function fetchCategories() {
   className="w-24 h-24 object-cover rounded-xl mx-auto mb-4"
 />
 
-            <h3 className="text-lg font-semibold">
-              {item.name}
-            </h3>
+           <h3 className="text-xl font-bold text-gray-900">
+  {item.name
+    ?.split(" ")
+    .map((word: string) =>
+      word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+    )
+    .join(" ")}
+</h3>
           </Link>
         ))}
       </div>
