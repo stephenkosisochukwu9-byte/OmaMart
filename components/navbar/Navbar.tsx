@@ -265,11 +265,11 @@ async function logout() {
 
       </div>
       {mobileMenuOpen && (
-  <div className="md:hidden bg-white border-t shadow-lg">
+  <div className="md:hidden bg-white border-t shadow-lg text-gray-800">
     <Link
       href="/"
       onClick={() => setMobileMenuOpen(false)}
-      className="block px-6 py-4 hover:bg-gray-100"
+      className="block px-6 py-4 text-gray-800 font-semibold hover:bg-gray-100 hover:text-orange-500 transition"
     >
       Home
     </Link>
