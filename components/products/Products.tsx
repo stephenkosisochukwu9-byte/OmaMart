@@ -147,25 +147,25 @@ const { search, setSearch } = useSearch();
   className="block w-full max-w-[170px] mx-auto bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
 >
 
-    <div className="relative bg-gray-100 h-20 overflow-hidden flex items-center justify-center">
+    <div className="relative bg-gray-100 h-24 overflow-hidden flex items-center justify-center">
 
    <Image
   src={product.image}
   alt={product.name}
   fill
   sizes="(max-width:768px) 100vw, 25vw"
-  className="object-contain p-2 group-hover:scale-105 transition duration-300"
+  className="object-contain p-0 group-hover:scale-110 transition duration-300"
   unoptimized
 />
      
 
     </div>
 
-    <div className="p-2 text-gray-900 space-y-1">
+    <div className="px-2 pt-1 pb-2 text-gray-900">
 
      <span
   style={{ color: "#c2410c" }}
-  className="text-xs font-semibold bg-orange-100 px-2 py-1 rounded-full"
+  className="text-sm font-semibold bg-orange-100 px-2 py-1 rounded-full"
 >
   {product.category
   ?.split(" ")
@@ -187,11 +187,11 @@ const { search, setSearch } = useSearch();
 
       <div className="flex items-center gap-2 mt-0">
 
-        <span className="text-xl font-extrabold text-orange-500">
+        <span className="text-lg font-extrabold text-orange-500">
           ₦{Number(product.price).toLocaleString()}
         </span>
 
-        <span className="line-through text-gray-500 text-sm">
+        <span className="line-through text-gray-400 text-xs">
           ₦{Number(product.old_price).toLocaleString()}
         </span>
 
