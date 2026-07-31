@@ -147,7 +147,7 @@ const { search, setSearch } = useSearch();
   className="block w-full max-w-[170px] mx-auto bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
 >
 
-    <div className="relative bg-gray-100 h-24 overflow-hidden flex items-center justify-center">
+    <div className="relative bg-gray-100 h-29 overflow-hidden flex items-center justify-center">
 
    <Image
   src={product.image}
