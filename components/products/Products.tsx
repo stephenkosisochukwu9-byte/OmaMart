@@ -147,7 +147,7 @@ const { search, setSearch } = useSearch();
   className="block w-full max-w-[170px] mx-auto bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
 >
 
-    <div className="relative bg-gray-100 h-28 overflow-hidden flex items-center justify-center">
+    <div className="relative bg-gray-100 h-20 overflow-hidden flex items-center justify-center">
 
    <Image
   src={product.image}
@@ -185,7 +185,7 @@ const { search, setSearch } = useSearch();
 
      
 
-      <div className="flex items-center gap-2 mt-1">
+      <div className="flex items-center gap-2 mt-0">
 
         <span className="text-xl font-extrabold text-orange-500">
           ₦{Number(product.price).toLocaleString()}
