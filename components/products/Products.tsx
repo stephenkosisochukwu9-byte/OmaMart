@@ -6,6 +6,7 @@ import { useCart } from "@/components/context/CartContext";
 import { supabase } from "@/lib/supabase";
 import { useEffect, useMemo, useState } from "react";
 import { useSearch } from "@/components/context/SearchContext";
+import Link from "next/link";
 
 export default function Products() {
   const { addToCart } = useCart();
@@ -135,31 +136,32 @@ const { search, setSearch } = useSearch();
 
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-4 gap-3 px-2">
 
         {filteredProducts.map((product) => (
            
 
-  <div
-    key={product.id}
-    className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden group"
-  >
+  <Link
+  href={`/products/${product.id}`}
+  key={product.id}
+  className="block w-full max-w-[170px] mx-auto bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
+>
 
-    <div className="relative bg-gray-100 h-16 w-full overflow-hidden">
+    <div className="relative bg-gray-100 h-28 overflow-hidden flex items-center justify-center">
 
    <Image
   src={product.image}
   alt={product.name}
   fill
   sizes="(max-width:768px) 100vw, 25vw"
-  className="object-contain object-center group-hover:scale-105 transition duration-300"
+  className="object-contain p-2 group-hover:scale-105 transition duration-300"
   unoptimized
 />
      
 
     </div>
 
-    <div className="p-3 text-gray-900">
+    <div className="p-2 text-gray-900">
 
      <span
   style={{ color: "#c2410c" }}
@@ -195,46 +197,10 @@ const { search, setSearch } = useSearch();
 
      
 
-      {Number(product.stock) <= 0 ? (
-  <button
-    disabled
-    className="w-full mt-5 bg-gray-400 text-white py-3 rounded-xl cursor-not-allowed"
-  >
-    Out of Stock
-  </button>
-) : (
-  <button
-  disabled={Number(product.stock) <= 0}
-    onClick={() => {
-     addToCart({
-  id: product.id,
-  name: product.name,
-  price: product.price,
-  image: product.image,
-  stock: product.stock,
-});
-      setShowMessage(true);
-
-      setTimeout(() => {
-        setShowMessage(false);
-      }, 2000);
-    }}
-    className={`w-full mt-3 py-2 rounded-lg flex items-center justify-center gap-2 transition font-semibold text-sm ${
-  Number(product.stock) <= 0
-    ? "bg-gray-400 cursor-not-allowed"
-    : "bg-orange-500 hover:bg-orange-600 text-white"
-}`}
-  >
-   <>
-  <ShoppingCart size={16} />
-  Add to Cart
-</>
-  </button>
-)}
-
+     
     </div>
 
-  </div>
+  </Link>
 
 ))}
 
