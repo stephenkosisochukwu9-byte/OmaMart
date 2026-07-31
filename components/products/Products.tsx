@@ -165,7 +165,7 @@ const { search, setSearch } = useSearch();
 
      <span
   style={{ color: "#c2410c" }}
-  className="text-sm font-semibold bg-orange-100 px-3 py-1 rounded-full"
+  className="text-xs font-semibold bg-orange-100 px-2 py-1 rounded-full"
 >
   {product.category
   ?.split(" ")
@@ -178,14 +178,16 @@ const { search, setSearch } = useSearch();
      <h3
  className="text-gray-900 text-base font-semibold mt-2 leading-tight h-12 overflow-hidden"
 >
-  {product.name}
+  {product.name.length > 22
+  ? `${product.name.substring(0, 22)}...`
+  : product.name}
 </h3>
 
      
 
       <div className="flex items-center gap-3 mt-3">
 
-        <span className="text-3xl font-extrabold text-orange-600">
+        <span className="text-xl font-extrabold text-orange-500">
           ₦{Number(product.price).toLocaleString()}
         </span>
 
