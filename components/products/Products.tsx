@@ -145,14 +145,14 @@ const { search, setSearch } = useSearch();
     className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden group"
   >
 
-    <div className="relative bg-gray-100 h-40 w-full overflow-hidden">
+    <div className="relative bg-gray-100 h-16 w-full overflow-hidden">
 
    <Image
   src={product.image}
   alt={product.name}
   fill
   sizes="(max-width:768px) 100vw, 25vw"
-  className="object-cover object-center group-hover:scale-105 transition duration-300"
+  className="object-contain object-center group-hover:scale-105 transition duration-300"
   unoptimized
 />
      
