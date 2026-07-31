@@ -161,7 +161,7 @@ const { search, setSearch } = useSearch();
 
     </div>
 
-    <div className="p-2 text-gray-900">
+    <div className="p-2 text-gray-900 space-y-1">
 
      <span
   style={{ color: "#c2410c" }}
@@ -176,7 +176,7 @@ const { search, setSearch } = useSearch();
   .join(" ")}
 </span>
      <h3
- className="text-gray-900 text-base font-semibold mt-2 leading-tight h-12 overflow-hidden"
+ className="text-gray-900 text-base font-semibold mt-2 leading-tight h-9 overflow-hidden"
 >
   {product.name.length > 22
   ? `${product.name.substring(0, 22)}...`
@@ -185,7 +185,7 @@ const { search, setSearch } = useSearch();
 
      
 
-      <div className="flex items-center gap-3 mt-3">
+      <div className="flex items-center gap-2 mt-1">
 
         <span className="text-xl font-extrabold text-orange-500">
           ₦{Number(product.price).toLocaleString()}
