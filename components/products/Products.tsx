@@ -165,11 +165,16 @@ const { search, setSearch } = useSearch();
   style={{ color: "#c2410c" }}
   className="text-sm font-semibold bg-orange-100 px-3 py-1 rounded-full"
 >
-  {product.category}
+  {product.category
+  ?.split(" ")
+  .map((word: string) =>
+    word.charAt(0).toUpperCase() +
+    word.slice(1).toLowerCase()
+  )
+  .join(" ")}
 </span>
-      <h3
-  style={{ color: "#111827" }}
-  className="font-bold text-lg mt-3 h-16 overflow-hidden"
+     <h3
+  className="text-gray-900 text-lg md:text-xl font-extrabold mt-3 h-16 leading-tight overflow-hidden"
 >
   {product.name}
 </h3>
@@ -181,7 +186,7 @@ const { search, setSearch } = useSearch();
           className="text-yellow-400 fill-yellow-400"
         />
 
-        <span className="ml-2 text-gray-600">
+        <span className="ml-2 text-gray-700 font-medium">
           {product.rating}
         </span>
 
@@ -189,17 +194,17 @@ const { search, setSearch } = useSearch();
 
       <div className="flex items-center gap-3 mt-3">
 
-        <span className="text-2xl font-bold text-orange-500">
+        <span className="text-3xl font-extrabold text-orange-600">
           ₦{Number(product.price).toLocaleString()}
         </span>
 
-        <span className="line-through text-gray-400">
+        <span className="line-through text-gray-500 text-sm">
           ₦{Number(product.old_price).toLocaleString()}
         </span>
 
       </div>
 
-      <p className="text-sm text-green-600 mt-2">
+      <p className="text-sm font-medium text-green-600 mt-2">
         {Number(product.stock)} in stock
       </p>
 
