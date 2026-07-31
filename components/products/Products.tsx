@@ -145,7 +145,7 @@ const { search, setSearch } = useSearch();
     className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden group"
   >
 
-    <div className="relative bg-gray-100 h-64 w-full overflow-hidden rounded-t-2xl">
+    <div className="relative bg-gray-100 h-40 w-full overflow-hidden">
 
    <Image
   src={product.image}
@@ -159,7 +159,7 @@ const { search, setSearch } = useSearch();
 
     </div>
 
-    <div className="p-5 text-gray-900">
+    <div className="p-3 text-gray-900">
 
      <span
   style={{ color: "#c2410c" }}
@@ -174,23 +174,12 @@ const { search, setSearch } = useSearch();
   .join(" ")}
 </span>
      <h3
-  className="text-gray-900 text-lg md:text-xl font-extrabold mt-3 h-16 leading-tight overflow-hidden"
+ className="text-gray-900 text-base font-semibold mt-2 leading-tight h-12 overflow-hidden"
 >
   {product.name}
 </h3>
 
-      <div className="flex items-center mt-2">
-
-        <Star
-          size={16}
-          className="text-yellow-400 fill-yellow-400"
-        />
-
-        <span className="ml-2 text-gray-700 font-medium">
-          {product.rating}
-        </span>
-
-      </div>
+     
 
       <div className="flex items-center gap-3 mt-3">
 
@@ -204,9 +193,7 @@ const { search, setSearch } = useSearch();
 
       </div>
 
-      <p className="text-sm font-medium text-green-600 mt-2">
-        {Number(product.stock)} in stock
-      </p>
+     
 
       {Number(product.stock) <= 0 ? (
   <button
@@ -232,14 +219,14 @@ const { search, setSearch } = useSearch();
         setShowMessage(false);
       }, 2000);
     }}
-    className={`w-full mt-5 py-3 rounded-xl flex items-center justify-center gap-2 transition font-semibold ${
+    className={`w-full mt-3 py-2 rounded-lg flex items-center justify-center gap-2 transition font-semibold text-sm ${
   Number(product.stock) <= 0
     ? "bg-gray-400 cursor-not-allowed"
     : "bg-orange-500 hover:bg-orange-600 text-white"
 }`}
   >
    <>
-  <ShoppingCart size={18} />
+  <ShoppingCart size={16} />
   Add to Cart
 </>
   </button>
