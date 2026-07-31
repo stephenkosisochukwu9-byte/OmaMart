@@ -71,20 +71,20 @@ async function fetchCategories() {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12">
+      <div className="grid grid-cols-2 gap-4 md:gap-6 mt-10">
         {categories.map((item) => (
          <Link
   href={`/categories/${item.slug}`}
   key={item.id}
-  className="bg-white rounded-xl shadow-md border p-8 text-center hover:shadow-xl transition block"
+ className="bg-white rounded-xl shadow-md border p-4 md:p-8 ..."
 >
             <img
   src={item.image}
   alt={item.name}
-  className="w-24 h-24 object-cover rounded-xl mx-auto mb-4"
+  className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-xl mx-auto mb-3"
 />
 
-           <h3 className="text-xl font-bold text-gray-900">
+           <h3 className="text-lg md:text-xl font-bold text-gray-900 leading-tight">
   {item.name
     ?.split(" ")
     .map((word: string) =>
