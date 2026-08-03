@@ -1,0 +1,72 @@
+import Link from "next/link";
+import Image from "next/image";
+
+type ProductCardProps = {
+  product: any;
+};
+
+export default function ProductCard({ product }: ProductCardProps) {
+  return (
+    <Link
+  href={`/products/${product.id}`}
+  key={product.id}
+ className="block w-full bg-white rounded-xl shadow hover:shadow-lg transition"
+>
+    <div className="relative bg-gray-100 h-44 flex items-center justify-center">
+
+   <Image
+  src={product.image}
+  alt={product.name}
+  fill
+  sizes="(max-width:768px) 100vw, 25vw"
+  className="object-contain p-0 group-hover:scale-110 transition duration-300"
+  unoptimized
+/>
+     
+
+    </div>
+
+    <div className="px-2 pt-1 pb-2 text-gray-900">
+
+     <span
+  style={{ color: "#c2410c" }}
+  className="text-sm font-semibold bg-orange-100 px-2 py-1 rounded-full"
+>
+  {product.category
+  ?.split(" ")
+  .map((word: string) =>
+    word.charAt(0).toUpperCase() +
+    word.slice(1).toLowerCase()
+  )
+  .join(" ")}
+</span>
+     <h3
+ className="text-gray-900 text-base font-semibold mt-2 leading-tight h-9 overflow-hidden"
+>
+  {product.name.length > 22
+  ? `${product.name.substring(0, 22)}...`
+  : product.name}
+</h3>
+
+     
+
+      <div className="flex items-center gap-2 mt-0">
+
+        <span className="text-lg font-extrabold text-orange-500">
+          ₦{Number(product.price).toLocaleString()}
+        </span>
+
+        <span className="line-through text-gray-400 text-xs">
+          ₦{Number(product.old_price).toLocaleString()}
+        </span>
+
+      </div>
+
+     
+
+     
+    </div>
+
+  </Link>
+  );
+}

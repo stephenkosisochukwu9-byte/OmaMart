@@ -7,11 +7,12 @@ import { supabase } from "@/lib/supabase";
 import { useEffect, useMemo, useState } from "react";
 import { useSearch } from "@/components/context/SearchContext";
 import Link from "next/link";
+import ProductGrid from "@/components/ui/ProductGrid";
 
 export default function Products() {
   const { addToCart } = useCart();
 
-  const [products, setProducts] = useState<any[]>([]);
+ const [products, setProducts] = useState<any[]>([]);
   const [showMessage, setShowMessage] = useState(false);
 
   // Search & Filters
@@ -19,23 +20,34 @@ const { search, setSearch } = useSearch();
   const [category, setCategory] = useState("All");
   const [sort, setSort] = useState("Newest");
 
-  useEffect(() => {
-    getProducts();
-  }, []);
+ useEffect(() => {
+  console.log("useEffect running");
+  getProducts();
+}, []);
 
   async function getProducts() {
-    const { data, error } = await supabase
-      .from("products")
-      .select("*")
-      .order("id", { ascending: false });
+  const { data, error } = await supabase
+    .from("products")
+    .select("*")
+    .order("id", { ascending: false });
 
-    if (error) {
-      console.error(error);
-      return;
-    }
+    console.log("Supabase data:", data);
+console.log("Supabase error:", error);
 
-    setProducts(data || []);
-  }
+
+ if (error) {
+  alert(error.message);
+  console.error(error);
+  return;
+}
+
+  console.log("Setting products:", data);
+setProducts(data || []);
+
+setTimeout(() => {
+  console.log("Products after state update");
+}, 1000);
+}
 
   const categories = [
     "All",
@@ -43,6 +55,7 @@ const { search, setSearch } = useSearch();
   ];
 
   const filteredProducts = useMemo(() => {
+    console.log("Products:", products);
     let data = [...products];
 
     if (search.trim() !== "") {
@@ -71,6 +84,10 @@ const { search, setSearch } = useSearch();
       default:
         data.sort((a, b) => b.id - a.id);
     }
+console.log("Search:", search);
+console.log("Category:", category);
+console.log("Sort:", sort);
+console.log("Filtered:", data.length);
 
     return data;
   }, [products, search, category, sort]);
@@ -87,7 +104,7 @@ const { search, setSearch } = useSearch();
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10">
 
         <div>
-          <h2 className="text-4xl font-bold text-gray-900">
+          <h2 className="text-4xl font-bold text-gray-600">
             Best Selling Products
           </h2>
 
@@ -136,77 +153,7 @@ const { search, setSearch } = useSearch();
 
       </div>
 
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-4 gap-3 px-2">
-
-        {filteredProducts.map((product) => (
-           
-
-  <Link
-  href={`/products/${product.id}`}
-  key={product.id}
-  className="block w-full max-w-[170px] mx-auto bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
->
-
-    <div className="relative bg-gray-100 h-29 overflow-hidden flex items-center justify-center">
-
-   <Image
-  src={product.image}
-  alt={product.name}
-  fill
-  sizes="(max-width:768px) 100vw, 25vw"
-  className="object-contain p-0 group-hover:scale-110 transition duration-300"
-  unoptimized
-/>
-     
-
-    </div>
-
-    <div className="px-2 pt-1 pb-2 text-gray-900">
-
-     <span
-  style={{ color: "#c2410c" }}
-  className="text-sm font-semibold bg-orange-100 px-2 py-1 rounded-full"
->
-  {product.category
-  ?.split(" ")
-  .map((word: string) =>
-    word.charAt(0).toUpperCase() +
-    word.slice(1).toLowerCase()
-  )
-  .join(" ")}
-</span>
-     <h3
- className="text-gray-900 text-base font-semibold mt-2 leading-tight h-9 overflow-hidden"
->
-  {product.name.length > 22
-  ? `${product.name.substring(0, 22)}...`
-  : product.name}
-</h3>
-
-     
-
-      <div className="flex items-center gap-2 mt-0">
-
-        <span className="text-lg font-extrabold text-orange-500">
-          ₦{Number(product.price).toLocaleString()}
-        </span>
-
-        <span className="line-through text-gray-400 text-xs">
-          ₦{Number(product.old_price).toLocaleString()}
-        </span>
-
-      </div>
-
-     
-
-     
-    </div>
-
-  </Link>
-
-))}
-
-      </div>
+     <ProductGrid products={filteredProducts} />
 
       {filteredProducts.length === 0 && (
 
