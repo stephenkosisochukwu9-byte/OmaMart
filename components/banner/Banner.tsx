@@ -7,16 +7,16 @@ export default function Banner() {
 
         <div className="flex flex-col-reverse md:grid md:grid-cols-2 items-center">
           {/* Left Side */}
-          <div className="p-10 text-white">
+          <div className="p-6 md:p-10 text-white">
             <span className="bg-white text-orange-600 px-4 py-2 rounded-full text-sm font-semibold">
               Limited Time Offer
             </span>
 
-            <h2 className="text-5xl font-bold mt-6 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold mt-4 md:mt-6 leading-tight">
               Weekend Mega Sale
             </h2>
 
-            <p className="mt-5 text-xl">
+            <p className="mt-4 text-base md:text-xl">
               Save up to{" "}
               <span className="text-yellow-300 font-bold">
                 50% OFF
@@ -24,7 +24,7 @@ export default function Banner() {
               on home appliances, kitchen essentials and household products.
             </p>
 
-            <button className="mt-8 bg-white text-orange-600 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition">
+           <button className="mt-6 bg-white text-orange-600 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold hover:bg-gray-100 transition">
               Shop Deals
             </button>
           </div>
