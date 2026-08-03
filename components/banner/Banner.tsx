@@ -30,13 +30,13 @@ export default function Banner() {
           </div>
 
           {/* Right Side */}
-          <div className="flex justify-center items-center p-2">
+          <div className="flex justify-center items-center w-2/5 md:w-auto">
             <Image
               src="/images/banner/banner.png"
               alt="Weekend Mega Sale"
               width={700}
               height={350}
-              className="w-11/12 md:w-full max-w-sm md:max-w-2xl object-contain"
+              className="w-full max-w-[170px] md:max-w-sm h-auto object-contain"
             />
           </div>
 
