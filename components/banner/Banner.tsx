@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function Banner() {
   return (
-   <section className="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-10">
-      <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl overflow-hidden">
+   <section className="max-w-7xl mx-auto px-4 md:px-6 py-2 md:py-10">
+     <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl overflow-hidden py-2">
 
-        <div className="grid grid-cols-2 items-center">
+        <div className="flex justify-center items-center p-2">
           {/* Left Side */}
           <div className="p-4 md:p-10 text-white">
             <span className="bg-white text-orange-600 px-4 py-2 rounded-full text-sm font-semibold">
@@ -36,7 +36,7 @@ export default function Banner() {
               alt="Weekend Mega Sale"
               width={700}
               height={350}
-              className="w-full max-w-md md:max-w-2xl object-contain mb-0"
+              className="w-11/12 md:w-full max-w-sm md:max-w-2xl object-contain"
             />
           </div>
 
