@@ -5,9 +5,9 @@ export default function Banner() {
    <section className="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-10">
       <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl overflow-hidden">
 
-        <div className="flex flex-col-reverse md:grid md:grid-cols-2 items-center">
+        <div className="grid grid-cols-2 items-center">
           {/* Left Side */}
-          <div className="px-5 py-5 md:p-10 text-white">
+          <div className="p-4 md:p-10 text-white">
             <span className="bg-white text-orange-600 px-4 py-2 rounded-full text-sm font-semibold">
               Limited Time Offer
             </span>
@@ -30,7 +30,7 @@ export default function Banner() {
           </div>
 
           {/* Right Side */}
-          <div className="flex justify-center pt-4 pb-0 px-4 md:p-6">
+          <div className="flex justify-center items-center p-2">
             <Image
               src="/images/banner/banner.png"
               alt="Weekend Mega Sale"
