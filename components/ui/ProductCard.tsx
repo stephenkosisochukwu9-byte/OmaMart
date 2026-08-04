@@ -10,7 +10,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     <Link
   href={`/products/${product.id}`}
   key={product.id}
- className="block w-full max-w-[185px] md:max-w-[260px] mx-auto bg-white rounded-xl shadow hover:shadow-lg transition"
+ className="block w-full max-w-[185px] md:max-w-[260px] mx-auto bg-white shadow hover:shadow-lg transition"
 >
     <div className="relative bg-gray-100 h-28 flex items-center justify-center">
 
