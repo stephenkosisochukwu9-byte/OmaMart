@@ -29,16 +29,27 @@ export default function Banner() {
             </button>
           </div>
 
-          {/* Right Side */}
-          <div className="flex justify-center items-center w-2/5 md:w-auto">
-            <Image
-              src="/images/banner/banner.png"
-              alt="Weekend Mega Sale"
-              width={700}
-              height={350}
-              className="w-full max-w-[170px] md:max-w-sm h-auto object-contain"
-            />
-          </div>
+         {/* Right Side */}
+<div className="hidden md:flex justify-center items-center flex-1">
+  <Image
+    src="/images/banner/banner.png"
+    alt="Weekend Mega Sale"
+    width={700}
+    height={500}
+    className="w-full max-w-md h-auto object-contain"
+  />
+</div>
+
+{/* Mobile Image */}
+<div className="flex md:hidden justify-center mt-4">
+  <Image
+    src="/images/banner/banner.png"
+    alt="Weekend Mega Sale"
+    width={280}
+    height={220}
+    className="w-56 h-auto object-contain"
+  />
+</div>
 
         </div>
 
