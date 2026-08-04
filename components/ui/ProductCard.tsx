@@ -41,7 +41,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   .join(" ")}
 </span>
      <h3
- className="text-gray-900 text-base font-semibold mt-1 leading-tight h-8 overflow-hidden"
+ className="text-black text-base font-semibold mt-1 leading-tight min-h-[48px]"
 >
   {product.name.length > 16
   ? `${product.name.substring(0, 16)}...`
