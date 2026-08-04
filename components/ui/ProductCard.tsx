@@ -10,9 +10,9 @@ export default function ProductCard({ product }: ProductCardProps) {
     <Link
   href={`/products/${product.id}`}
   key={product.id}
- className="block w-full max-w-[170px] mx-auto bg-white rounded-xl shadow hover:shadow-lg transition"
+ className="block w-full max-w-[185px] md:max-w-[260px] mx-auto bg-white rounded-xl shadow hover:shadow-lg transition"
 >
-    <div className="relative bg-gray-100 h-32 flex items-center justify-center">
+    <div className="relative bg-gray-100 h-28 flex items-center justify-center">
 
    <Image
   src={product.image}
@@ -26,7 +26,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
     </div>
 
-    <div className="p-2 text-gray-900">
+    <div className="p-1.5 text-gray-900">
 
      <span
   style={{ color: "#c2410c" }}
