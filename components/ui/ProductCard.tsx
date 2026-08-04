@@ -41,14 +41,14 @@ export default function ProductCard({ product }: ProductCardProps) {
   .join(" ")}
 </span>
      <h3
- className="text-gray-900 text-base font-semibold mt-1 leading-tight h-10 overflow-hidden"
+ className="text-gray-900 text-base font-semibold mt-1 leading-tight h-8 overflow-hidden"
 >
   {product.name.length > 16
   ? `${product.name.substring(0, 16)}...`
   : product.name}
 </h3>
 
-      <div className="flex items-center gap-1 mt-0">
+      <div className="flex items-center gap-1 mt-0.5">
 
         <span className="text-base font-extrabold text-orange-500">
           ₦{Number(product.price).toLocaleString()}
