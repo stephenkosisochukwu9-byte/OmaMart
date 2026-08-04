@@ -93,7 +93,7 @@ console.log("Filtered:", data.length);
   }, [products, search, category, sort]);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16">
+    <section className="max-w-7xl mx-auto px-1 py-10">
 
       {showMessage && (
         <div className="fixed top-6 right-6 bg-green-500 text-white px-6 py-3 rounded-xl shadow-xl z-50 animate-bounce">
@@ -119,7 +119,7 @@ console.log("Filtered:", data.length);
 
       </div>
 
-      <div className="grid md:grid-cols-3 gap-4 mb-10">
+      <div className="grid md:grid-cols-3 gap-2 mb-6">
 
         <input
           type="text"
