@@ -93,7 +93,7 @@ console.log("Filtered:", data.length);
   }, [products, search, category, sort]);
 
   return (
-    <section className="max-w-7xl mx-auto  py-10">
+    <section className="max-w-7xl mx-auto px-0.5  py-10">
 
       {showMessage && (
         <div className="fixed top-6 right-6 bg-green-500 text-white px-6 py-3 rounded-xl shadow-xl z-50 animate-bounce">
