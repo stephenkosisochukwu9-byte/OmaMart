@@ -47,7 +47,7 @@ export default function Banner() {
     alt="Weekend Mega Sale"
     width={280}
     height={220}
-    className="w-56 h-auto object-contain"
+    className="w-70 h-auto object-contain"
   />
 </div>
 
