@@ -12,7 +12,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   key={product.id}
  className="block w-full max-w-[170px] mx-auto bg-white rounded-xl shadow hover:shadow-lg transition"
 >
-    <div className="relative bg-gray-100 h-36 flex items-center justify-center">
+    <div className="relative bg-gray-100 h-32 flex items-center justify-center">
 
    <Image
   src={product.image}
@@ -41,10 +41,10 @@ export default function ProductCard({ product }: ProductCardProps) {
   .join(" ")}
 </span>
      <h3
- className="text-gray-900 text-base font-semibold mt-1 leading-tight h-8 overflow-hidden"
+ className="text-gray-900 text-base font-semibold mt-1 leading-tight h-10 overflow-hidden"
 >
-  {product.name.length > 22
-  ? `${product.name.substring(0, 22)}...`
+  {product.name.length > 16
+  ? `${product.name.substring(0, 16)}...`
   : product.name}
 </h3>
 
