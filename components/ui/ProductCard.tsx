@@ -10,9 +10,9 @@ export default function ProductCard({ product }: ProductCardProps) {
     <Link
   href={`/products/${product.id}`}
   key={product.id}
- className="block w-full bg-white rounded-xl shadow hover:shadow-lg transition"
+ className="block w-full max-w-[170px] mx-auto bg-white rounded-xl shadow hover:shadow-lg transition"
 >
-    <div className="relative bg-gray-100 h-44 flex items-center justify-center">
+    <div className="relative bg-gray-100 h-36 flex items-center justify-center">
 
    <Image
   src={product.image}
@@ -26,11 +26,11 @@ export default function ProductCard({ product }: ProductCardProps) {
 
     </div>
 
-    <div className="px-2 pt-1 pb-2 text-gray-900">
+    <div className="p-2 text-gray-900">
 
      <span
   style={{ color: "#c2410c" }}
-  className="text-sm font-semibold bg-orange-100 px-2 py-1 rounded-full"
+  className="text-xs font-semibold bg-orange-100 px-2 py-0.5 rounded-full"
 >
   {product.category
   ?.split(" ")
@@ -41,18 +41,16 @@ export default function ProductCard({ product }: ProductCardProps) {
   .join(" ")}
 </span>
      <h3
- className="text-gray-900 text-base font-semibold mt-2 leading-tight h-9 overflow-hidden"
+ className="text-gray-900 text-base font-semibold mt-1 leading-tight h-8 overflow-hidden"
 >
   {product.name.length > 22
   ? `${product.name.substring(0, 22)}...`
   : product.name}
 </h3>
 
-     
+      <div className="flex items-center gap-1 mt-0">
 
-      <div className="flex items-center gap-2 mt-0">
-
-        <span className="text-lg font-extrabold text-orange-500">
+        <span className="text-base font-extrabold text-orange-500">
           ₦{Number(product.price).toLocaleString()}
         </span>
 
