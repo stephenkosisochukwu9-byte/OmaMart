@@ -19,7 +19,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   alt={product.name}
   fill
   sizes="(max-width:768px) 100vw, 25vw"
-  className="object-contain p-0 group-hover:scale-110 transition duration-300"
+  className="object-contain p-3 group-hover:scale-105 transition duration-300"
   unoptimized
 />
      
